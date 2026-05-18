@@ -31,10 +31,9 @@ const displayPhonesData = (phones) => {
             />
           </figure>
           <div class="card-body">
-            <h2 class="card-title">${phone.phone_name}</h2>
-            <p>
-              A card component has a figure, a body part, and inside body there
-              are title and actions parts
+            <h2 class=" text-2xl font-bold card-title">${phone.phone_name}</h2>
+            <p class="text-xl font-bold">Brand:
+             ${phone.brand}
             </p>
             <div class="card-actions justify-center">
               <button class="btn btn-primary ">Buy Now</button>
