@@ -24,7 +24,7 @@
           required
           placeholder="Search"
         />
-        <button onclick="handleSearch()" class="btn btn-accent ml-[-5px]">Search</button>
+        <button onclick="handleSearch()" class="btn btn-accent ">Search</button>
       </div>
 
       <h3 class="text-3xl font-bold">Phone Hunting</h3>
@@ -34,6 +34,10 @@
             id="phone-card-container"
             class="grid grid-cols-1 mt-8 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-4"
           ></div>
+
+          <div class="justify-center mt-8 p-4">
+            <button id="show-all-btn" class="btn btn-accent hidden">Show All</button>
+          </div>
         </div>
       </section>
     </main>

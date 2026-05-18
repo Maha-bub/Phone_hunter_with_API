@@ -15,8 +15,34 @@ const displayPhonesData = (phones) => {
   // clear phone container before adding new search result
   phoneCardContainer.textContent = "";
 
+
+  
+    // display show all button if there are  more then 12 phones
+    if(phones.length>12){
+        const showAllButton=document.getElementById('show-all-btn');
+        showAllButton.classList.remove('hidden');
+    }
+    else{
+        showAllButton.classList.add('hidden');
+    }
+
+
+
+    phones = phones.slice(0, 12);
+
+    console.log(phones)
+
+
+
   phones.forEach((phone) => {
     console.log(phone);
+
+  
+
+
+
+
+
     // show phones on ui follow the 4 steps
     //step-1:create a div section for all html elements(card section)
     const phoneCard = document.createElement("div");
@@ -49,8 +75,8 @@ const displayPhonesData = (phones) => {
 // hnadle  search button
 
 const handleSearch = () => {
-  const searcField = document.getElementById("search-field-data");
-  const searchText = searcField.value;
+  const searchField = document.getElementById("search-field-data");
+  const searchText = searchField.value;
   console.log(searchText);
   loadPhone(searchText);
 };
