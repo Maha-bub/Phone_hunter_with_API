@@ -1,6 +1,5 @@
-const loadPhone = async () => {
-  const res = await fetch(
-    "https://openapi.programming-hero.com/api/phones?search=iphone",
+const loadPhone = async (searchValue) => {
+  const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchValue}`,
   );
   const data = await res.json();
   // console.log(data.data)
@@ -17,6 +16,9 @@ const displayPhonesData = (phones) => {
     // show phones on ui follow the 4 steps
 
     const phoneCardContainer = document.getElementById("phone-card-container");
+    // clear phone container before adding new search result 
+
+    phoneCardContainer.textContent="";
 
     //step-1:create a div section for all html elements(card section)
     const phoneCard = document.createElement("div");
@@ -46,4 +48,13 @@ const displayPhonesData = (phones) => {
   });
 };
 
-loadPhone();
+
+// hnadle  search button
+
+const handleSearch=()=>{
+    const searcField=document.getElementById('search-field-data');
+    const searchText=searcField.value;
+    console.log(searchText)
+    loadPhone(searchText);
+}
+
