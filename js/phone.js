@@ -22,7 +22,7 @@ const displayPhonesData = (phones) => {
     const phoneCard = document.createElement("div");
 
     //step-2: set phonecard classlist for tailwind style layout
-    phoneCard.classList = `card bg-base-100 w-96 shadow-sm`;
+    phoneCard.classList = `card bg-base-100 p-4 shadow-sm`;
     //step-3: set inner html
     phoneCard.innerHTML = ` <figure>
             <img
