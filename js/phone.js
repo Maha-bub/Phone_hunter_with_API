@@ -1,14 +1,54 @@
-const loadPhone=async ()=>{
-    
-    const res=await fetch('https://openapi.programming-hero.com/api/phones?search=iphone');
-    const data=await res.json();
-    // console.log(data.data)
-    displayPhonesData(data);
-}   
+const loadPhone = async () => {
+  const res = await fetch(
+    "https://openapi.programming-hero.com/api/phones?search=iphone",
+  );
+  const data = await res.json();
+  // console.log(data.data)
+  const phones = data.data;
 
-const displayPhonesData=phones=>{
-    console.log(phones.data);
-}
+  displayPhonesData(phones);
+};
 
+const displayPhonesData = (phones) => {
+  // console.log(phones);
+
+  phones.forEach((phone) => {
+    console.log(phone);
+    // show phones on ui follow the 4 steps
+
+    const phoneCardContainer=document.getElementById('phone-card-container')
+
+    //step-1:create a div section for all html elements(card section)
+    const phoneCard = document.createElement("div");
+
+    //step-2: set phonecard classlist for tailwind style layout
+    phoneCard.classList = `card bg-base-100 w-96 shadow-sm`;
+    //step-3: set inner html
+    phoneCard.innerHTML = ` <figure>
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt="Shoes"
+            />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Card Title</h2>
+            <p>
+              A card component has a figure, a body part, and inside body there
+              are title and actions parts
+            </p>
+            <div class="card-actions justify-center">
+              <button class="btn btn-primary ">Buy Now</button>
+            </div>
+          </div>`;
+
+          //step-4: append phonecard html elements in phone-card-container
+
+          phoneCardContainer.appendChild(phoneCard);
+
+
+
+
+  });
+};
 
 loadPhone();
