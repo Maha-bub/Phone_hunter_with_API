@@ -16,7 +16,7 @@ const displayPhonesData = (phones) => {
     console.log(phone);
     // show phones on ui follow the 4 steps
 
-    const phoneCardContainer=document.getElementById('phone-card-container')
+    const phoneCardContainer = document.getElementById("phone-card-container");
 
     //step-1:create a div section for all html elements(card section)
     const phoneCard = document.createElement("div");
@@ -26,12 +26,12 @@ const displayPhonesData = (phones) => {
     //step-3: set inner html
     phoneCard.innerHTML = ` <figure>
             <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
+              src="${phone.image}"
+              alt="${phone.phone_name}"
             />
           </figure>
           <div class="card-body">
-            <h2 class="card-title">Card Title</h2>
+            <h2 class="card-title">${phone.phone_name}</h2>
             <p>
               A card component has a figure, a body part, and inside body there
               are title and actions parts
@@ -41,13 +41,9 @@ const displayPhonesData = (phones) => {
             </div>
           </div>`;
 
-          //step-4: append phonecard html elements in phone-card-container
+    //step-4: append phonecard html elements in phone-card-container
 
-          phoneCardContainer.appendChild(phoneCard);
-
-
-
-
+    phoneCardContainer.appendChild(phoneCard);
   });
 };
 
