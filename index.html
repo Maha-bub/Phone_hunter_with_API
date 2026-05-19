@@ -16,7 +16,7 @@
 
     <main class="container text-center px-4 mt-4 justify-center">
       <!-- search section -->
-      <div class="">
+      <div class="bg-gray-600 p-5 w-full rounded-t-md">
         <input
           id="search-field-data"
           class="input"
@@ -24,19 +24,27 @@
           required
           placeholder="Search"
         />
-        <button onclick="handleSearch()" class="btn btn-accent ">Search</button>
+        <button onclick="handleSearch()" class="btn btn-accent">Search</button>
       </div>
 
       <h3 class="text-3xl font-bold">Phone Hunting</h3>
       <section class="text-center">
+        <div id="loading-spiner" class="mt-20 hidden">
+         
+          <span class="loading w-8 loading-spinner text-neutral"></span>
+         
+         
+        </div>
         <div>
           <div
             id="phone-card-container"
             class="grid grid-cols-1 mt-8 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-4"
           ></div>
 
-          <div class="justify-center mt-8 p-4">
-            <button id="show-all-btn" class="btn btn-accent hidden">Show All</button>
+          <div id="show-all-container" class="justify-center mt-8 p-4 ">
+            <button onclick="handleShowAll()" id="show-all-btn" class="btn btn-accent hidden">
+              Show All
+            </button>
           </div>
         </div>
       </section>
