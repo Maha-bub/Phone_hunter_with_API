@@ -54,7 +54,7 @@ if(!isShowAll){
              ${phone.brand}
             </p>
             <div class="card-actions justify-center">
-              <button onclick="handleShowModal('${phone.slug}')" class="btn btn-primary ">Show Details</button>
+              <button onclick="handleShowModal('${phone.slug}'),show_details_modal.showModal()" class="btn btn-primary ">Show Details</button>
             </div>
           </div>`;
 
