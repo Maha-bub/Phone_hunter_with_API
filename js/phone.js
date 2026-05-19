@@ -74,10 +74,28 @@ const handleShowModal= async(id)=>{
     const res=await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
     const data=await res.json();
     console.log(data);
+    const phoneDetails=data.data;
+
+    show_details(phoneDetails)
+}
+
+const show_details=async (phone)=>{
+
+    const phoneName=document.getElementById('show_detail_phone_name');
+    phoneName.innerText=phone.name;
+    const showDetails=document.getElementById('Show_detail_container');
+    showDetails.innerHTML=`
+    <img class="mt-3 p-5 m-auto" src="${phone?.image}">
+    <p><span>Brand Name:</span>${phone?.brand}</p>
+    <p><span>Storage:</span>${phone?.mainFeatures?.storage}</p>
+    <p><span>ChipSet:</span>${phone?.mainFeatures?.chipSet}</p>
+    <p><span>Memory:</span>${phone?.mainFeatures?.memory}</p>
+    <p><span>Release Date:</span>${phone?.releaseDate}</p>
+    `
+   show_details_modal.showModal()
 }
 
 // hnadle  search button
-
 const handleSearch = (isShowAll) => {
   toggleLoadinSpiner(true);
   const searchField = document.getElementById("search-field-data");
