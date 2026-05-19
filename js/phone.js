@@ -90,7 +90,12 @@ const show_details=async (phone)=>{
     <p><span>Storage:</span>${phone?.mainFeatures?.storage}</p>
     <p><span>ChipSet:</span>${phone?.mainFeatures?.chipSet}</p>
     <p><span>Memory:</span>${phone?.mainFeatures?.memory}</p>
-    <p><span>Release Date:</span>${phone?.releaseDate}</p>
+    <p><span>Sensors:</span>${phone?.mainFeatures?.sensors}</p>
+    <p><span>NFC Availabe:</span>${phone?.others.NFC}</p>
+    <p><span>GPS Available:</span>${phone?.others?.GPS}</p>
+    <p><span>Radio:</span>${phone?.others?.Radio}</p>
+    <p><span>USB:</span>${phone?.others?.USB}</p>
+    <p><span>WLAN:</span>${phone?.others?.WLAN}</p>
     `
    show_details_modal.showModal()
 }
