@@ -54,7 +54,7 @@ if(!isShowAll){
              ${phone.brand}
             </p>
             <div class="card-actions justify-center">
-              <button class="btn btn-primary ">Buy Now</button>
+              <button onclick="handleShowModal('${phone.slug}')" class="btn btn-primary ">Show Details</button>
             </div>
           </div>`;
 
@@ -63,9 +63,18 @@ if(!isShowAll){
     phoneCardContainer.appendChild(phoneCard);
   });
 
-  //handle loading spiner
+  //handle loading spiner for hide
   toggleLoadinSpiner(false);
 };
+
+
+//show details button and open dilogue modal
+const handleShowModal= async(id)=>{
+    console.log('show detailed button clicked!',id)
+    const res=await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
+    const data=await res.json();
+    console.log(data);
+}
 
 // hnadle  search button
 
