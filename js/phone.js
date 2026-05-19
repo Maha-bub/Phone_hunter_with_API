@@ -24,13 +24,16 @@ const displayPhonesData = (phones,isShowAll) => {
     showAllButton.classList.add("hidden");
   }
 
-  phones = phones.slice(0, 12);
+//display only first 12 phones if not show all(!showAll) 
+if(!isShowAll){
+    phones = phones.slice(0, 12);
+}
 
 //   console.log(phones);
   console.log('Is show all:',isShowAll);
 
   phones.forEach((phone) => {
-    console.log(phone);
+    // console.log(phone);
 
     // show phones on ui follow the 4 steps
     //step-1:create a div section for all html elements(card section)
@@ -70,7 +73,7 @@ const handleSearch = (isShowAll) => {
   toggleLoadinSpiner(true);
   const searchField = document.getElementById("search-field-data");
   const searchText = searchField.value;
-  console.log(searchText);
+//   console.log(searchText);
   loadPhone(searchText, isShowAll);
 };
 
